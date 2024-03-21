@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+    <head>
+        <title>Index</title>
+    </head>
+
+
+    <body>
+        
+            
+        </div> 
+        <div>
+
+            <img src="{% static 'images/cat.png' %}"
+            alt="Picture of cat" />
+            <h1>The students and their cats are:</h1>
+            <div>
+                {% if students %}
+                <ul>
+                    {% for student in students%}
+                    <li> {{student.firstName}} {{ student.lastName}} has <strong>{{student.numberOfCats}}</strong>
+
+                        {%if student.numberOfCats == 1%}
+                            cat
+                        {% else%}
+                            cats
+                        {% endif %}
+                    </li>
+
+                      <ul>
+                        {% for cat in cats%}
+                            {% if cat.studentName  == student%}
+                            <li> {{cat.catName}} </li>
+
+                            
+
+                        
+                            {% endif %}
+                        
+
+                           {% endfor %}
+                      </ul>
+                      
+                    {% endfor %}
+
+                </ul>
+                {% else %}
+                <strong> there are no students present</strong>
+                {% endif %}
+        </div>
+
+        <a href="/cats/pets/">about the pets of students</a>
+
+    </body>
+</html>

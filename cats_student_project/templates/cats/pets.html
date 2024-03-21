@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+    <head>
+        <title>pets</title>
+    </head>
+
+
+    <body>
+        
+            
+        </div> 
+        <div>
+           
+
+            <img src="{% static 'images/cats_with_fire.jpg' %}"
+            alt="Picture of cats with fire" /> 
+            
+            <h1>All the cats are:</h1>
+            <div>
+                {% if cats %}
+                <ul>
+
+                    {% for cat in cats%}
+                    <li> {{cat.catName}} </li>
+
+
+
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <strong> no cats present </strong>
+
+                {% endif %}
+               
+            </div>
+
+           <p> Click to back to <a href="/cats/">Home</a></p>
+
+
+            
+        </div>
+
+    </body>
+</html>
